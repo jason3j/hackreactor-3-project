@@ -1,0 +1,23 @@
+{
+  "name": "hackreactor-3-project",
+  "version": "1.0.0",
+  "description": "HR Project",
+  "main": "mainIndex.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "ejs": "^2.3.1",
+    "express": "~4.9.8"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jason3j/hackreactor-3-project.git"
+  },
+  "author": "jason3j",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jason3j/hackreactor-3-project/issues"
+  },
+  "homepage": "https://github.com/jason3j/hackreactor-3-project#readme"
+}
