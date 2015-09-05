@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+    <head lang="en">
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width , initial-scale=1.0 , maximum-scale=1,user-scalable=no">
+        <link href="bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+        <link href="myStyles.css" rel="stylesheet">
+        <title>Main Page HR Project</title>
+    </head>
+    <body background="pictures/spacestars.png">
+    <div class="navbar navbar-inverse navbar-static-top">
+        <div class="container">
+            <a href="" class="navbar-brand">Main Page</a>
+            <a href="charts/charts.html" class="navbar-brand">Poké Chart</a>
+            <a href="Yoda/yoda.html" class="navbar-brand">Yoda Talk</a>
+            <a href="blackjack/blackjack.html" class="navbar-brand">Blackjack</a>
+            <a href="about/about.html" class="navbar-brand">About</a>
+        </div>
+    </div>
+
+    <div class="panel panel-default">
+        <div class="panel-heading">My Projects for Hack Reactor</div>
+        <div class="panel-body">
+            <p style="font-size: 14px">Below are some of the projects that I had a fun time working on
+                                       to prepare myself for my next Hack Reactor interview.  I hope you enjoy!
+            </p>
+        </div>
+
+        <table class="mainPageTable">
+            <tr>
+                <td class="mainPage">
+                    <p>Poké Chart</p>
+                    <a href="charts/charts.html">
+                        <img src="pictures/macKeyboard3D.jpg" class="imgYoda img-circle img-responsive" style="height: 250px; width: 250px">
+                    </a>
+                    <br>
+                </td>
+                <td class="mainPage">
+                    <p>Yoda Talk</p>
+                    <a href="Yoda/yoda.html">
+                        <img src="pictures/yodaCool.jpg" class="imgYoda img-circle img-responsive" style="height: 250px; width: 250px">
+                    </a>
+                    <br>
+                </td>
+            </tr>
+            <tr>
+                <td class="mainPage" colspan="2">
+                    <p>Blackjack</p>
+                    <a href="blackjack/blackjack.html">
+                        <img src="pictures/blackjack-21.jpg" class="imgYoda img-circle img-responsive" style="height: 250px; width: 250px">
+                    </a>
+                    <br>
+                </td>
+            </tr>
+        </table>
+    </div>
+
+    <div id="divRandom" class="divRandom">
+        <p id="randomFact" class="randomFact">Random Fact</p>
+        <button id="randomBtn" class="convertBtn">Next Random Number Fact</button>
+    </div>
+
+    <script src="bower_components/jquery/dist/jquery.js"></script>
+    <script type="text/javascript" src="interview3project.js"></script>
+    </body>
+</html>

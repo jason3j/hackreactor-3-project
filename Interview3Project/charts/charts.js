@@ -1,0 +1,135 @@
+var genOnePokemonNames = ["Bulbasaur","Ivysaur","Venusaur","Charmander","Charmeleon","Charizard","Squirtle","Wartortle","Blastoise",
+    "Caterpie","Metapod","Butterfree","Weedle","Kakuna","Beedrill","Pidgey","Pidgeotto","Pidgeot","Rattata","Raticate",
+    "Spearow","Fearow","Ekans","Arbok","Pikachu","Raichu","Sandshrew","Sandslash","Nidoran-f","Nidorina","Nidoqueen",
+    "Nidoran-m","Nidorino","Nidoking","Clefairy","Clefable","Vulpix","Ninetales","Jigglypuff","Wigglytuff","Zubat","Golbat",
+    "Oddish","Gloom","Vileplume","Paras","Parasect","Venonat","Venomoth","Diglett","Dugtrio","Meowth","Persian",
+    "Psyduck","Golduck","Mankey","Primeape","Growlithe","Arcanine","Poliwag","Poliwhirl","Poliwrath","Abra","Kadabra","Alakazam",
+    "Machop","Machoke","Machamp","Bellsprout","Weepinbell","Victreebel","Tentacool","Tentacruel","Geodude","Graveler","Golem",
+    "Ponyta","Rapidash","Slowpoke","Slowbro","Magnemite","Magneton","Farfetchd","Doduo","Dodrio","Seel","Dewgong","Grimer","Muk",
+    "Shellder","Cloyster","Gastly","Haunter","Gengar","Onix","Drowzee","Hypno","Krabby","Kingler","Voltorb","Electrode",
+    "Exeggcute","Exeggutor","Cubone","Marowak","Hitmonlee","Hitmonchan","Lickitung","Koffing","Weezing","Rhyhorn","Rhydon",
+    "Chansey","Tangela","Kangaskhan","Horsea","Seadra","Goldeen","Seaking","Staryu","Starmie","Mr-mime","Scyther","Jynx",
+    "Electabuzz","Magmar","Pinsir","Tauros","Magikarp","Gyarados","Lapras","Ditto","Eevee","Vaporeon","Jolteon","Flareon",
+    "Porygon","Omanyte","Omastar","Kabuto","Kabutops","Aerodactyl","Snorlax","Articuno","Zapdos","Moltres",
+    "Dratini","Dragonair","Dragonite","Mewtwo","Mew"];
+
+var poke1;
+var poke2;
+
+var sel1 = document.getElementById('dropdownList1');
+var fragment1 = document.createDocumentFragment();
+genOnePokemonNames.forEach(function(genOneNames) {
+    var opt = document.createElement('option');
+    opt.innerHTML = genOneNames;
+    opt.value = genOneNames.toLocaleLowerCase();
+    opt.id = "theyPickOne";
+
+    fragment1.appendChild(opt);
+
+});
+sel1.appendChild(fragment1);
+
+var sel2 = document.getElementById('dropdownList2');
+var fragment2 = document.createDocumentFragment();
+genOnePokemonNames.forEach(function(genOneNames) {
+    var opt = document.createElement('option');
+    opt.innerHTML = genOneNames;
+    opt.value = genOneNames.toLocaleLowerCase();
+    opt.id = "theyPickTwo";
+    fragment2.appendChild(opt);
+
+});
+
+$("#dropdownMenu2").prop("disabled", true);
+$("#compareBtn").prop("disabled", true);
+
+sel2.appendChild(fragment2);
+$("#dropdownList1").click(function(){
+    var text = $(event.target).text();
+    document.getElementById("chosenOne").innerHTML = text;
+    var result1 = document.getElementById("chosenOne").textContent.toLocaleLowerCase();
+    var theUrlFirst = "https://phalt-pokeapi.p.mashape.com/pokemon/" + result1 + "/";
+    var theKey = "ZpMtsjR98WmshEfAm8ywcmq5o4Osp1QtMcxjsn70UJR79HgQtO";
+    $("#dropdownMenu2").prop("disabled", false);
+    $.ajax({
+        url: theUrlFirst,
+        headers: {"X-Mashape-Key": theKey},
+        success: function (input) {
+            document.getElementById("pokemonPictureOne").innerHTML = "";
+            var picNumber = input["pkdx_id"];
+            var pictureOne = document.createElement("img");
+            pictureOne.src = "../Pictures/PokemonPics/" + picNumber + ".png";
+            document.getElementById("pokemonPictureOne").appendChild(pictureOne);
+            poke1 = input;
+        }
+    });
+});
+$("#dropdownList2").click(function(){
+    var textTwo = $(event.target).text();
+    document.getElementById("chosenTwo").innerHTML = textTwo;
+    var result2 = document.getElementById("chosenTwo").textContent.toLocaleLowerCase();
+    var theUrlSecond = "https://phalt-pokeapi.p.mashape.com/pokemon/" + result2 + "/";
+    var theKey = "ZpMtsjR98WmshEfAm8ywcmq5o4Osp1QtMcxjsn70UJR79HgQtO";
+
+    $.ajax({
+        url: theUrlSecond,
+        headers: {"X-Mashape-Key": theKey},
+        success: function (input) {
+            document.getElementById("pokemonPictureTwo").innerHTML = "";
+            var picNumber = input["pkdx_id"];
+            var pictureTwo = document.createElement("img");
+            pictureTwo.src = "../Pictures/PokemonPics/" + picNumber + ".png";
+            document.getElementById("pokemonPictureTwo").appendChild(pictureTwo);
+            poke2 = input;
+            $("#compareBtn").prop("disabled", false);
+
+        }
+    });
+});
+
+$("#compareBtn").click(function () {
+    combinedGraphs(poke1, poke2);
+});
+
+function combinedGraphs (pokemonOne, pokemonTwo) {
+    document.getElementById("pokemonChartCombined").innerHTML = "";
+
+    $(function () {
+        $('#pokemonChartCombined').highcharts({
+            chart: {
+                type: 'column'
+            },
+            title: {
+                text: pokemonOne["name"] + " VS " + pokemonTwo["name"]
+            },
+            xAxis: {
+                categories: [pokemonOne["name"], pokemonTwo["name"]]
+            },
+            yAxis: {
+                title: {
+                    text: ' '
+                }
+            },
+            series: [{
+                name: 'Attack',
+                data: [pokemonOne["attack"], pokemonTwo["attack"]]
+            }, {
+                name: 'Defense',
+                data: [pokemonOne["defense"], pokemonTwo["defense"]]
+            }, {
+                name: 'Speed',
+                data: [pokemonOne["speed"], pokemonTwo["speed"]]
+            }, {
+                name: 'Special Attack',
+                data: [pokemonOne["sp_atk"], pokemonTwo["sp_atk"]]
+            }, {
+                name: 'Special Defense',
+                data: [pokemonOne["sp_def"], pokemonTwo["sp_def"]]
+            }, {
+                name: 'HP',
+                data: [pokemonOne["hp"], pokemonTwo["hp"]]
+            }]
+        });
+    });
+}
+

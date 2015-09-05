@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+    <head lang="en">
+        <meta charset="UTF-8">
+        <title>Charts</title>
+        <meta name="viewport" content="width=device-width , initial-scale=1.0 , maximum-scale=1,user-scalable=no">
+        <link href="../bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+        <link href="../myStyles.css" rel="stylesheet">
+    </head>
+    <body id="pokeBody" background="../pictures/pokemonTCG.jpg">
+        <div class="navbar navbar-inverse navbar-static-top">
+            <div class="container">
+                <a href="../mainIndex.html" class="navbar-brand">Main Page</a>
+                <a href="" class="navbar-brand">Poké Chart</a>
+                <a href="../Yoda/yoda.html" class="navbar-brand">Yoda Talk</a>
+                <a href="../blackjack/blackjack.html" class="navbar-brand">Blackjack</a>
+                <a href="../about/about.html" class="navbar-brand">About</a>
+            </div>
+        </div>
+        <table class="pokemonChoosing">
+            <td>
+                <div class="dropdown">
+                    <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown">Pick 1st Pokémon
+                        <span class="caret"></span>
+                    </button>
+                    <ul id="dropdownList1" class="dropdown-menu scrollable-menu" aria-labelledby="dropdownMenu1"></ul>
+                </div>
+            </td>
+            <td>
+                <div class="dropdown">
+                    <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown">Pick 2nd Pokémon
+                        <span class="caret"></span>
+                    </button>
+                    <ul id="dropdownList2" class="dropdown-menu scrollable-menu" aria-labelledby="dropdownMenu2"></ul>
+                </div>
+            </td>
+        </table>
+        <br>
+        <div>
+            <table class="pokemonChosen">
+                <tr>
+                    <td><p style="font-size: 35px">1st Pokémon choice: </p></td>
+                    <td id="chosenOne" class="inWhiteBox" style="font-size: 35px" ></td>
+                    <td id="pokemonPictureOne" style="font-size: 35px"></td>
+
+                </tr>
+                <tr>
+                    <td><label style="font-size: 35px">2nd Pokémon choice:</label></td>
+                    <td id="chosenTwo" class="inWhiteBox" style="font-size: 35px"></td>
+                    <td id="pokemonPictureTwo" style="font-size: 35px"></td>
+                </tr>
+            </table>
+        </div>
+
+        <br>
+        <button id="compareBtn" class="pokemonBtn">COMPARE POKÉMON</button>
+        <br>
+        <br>
+
+        <div id="pokemonChartCombined"></div>
+
+        <div class="powerByForChart">
+            Powered By <a href="https://market.mashape.com/phalt/pokeapi">POKEAPI</a>
+        </div>
+
+        <script src="../bower_components/spin.js/spin.js"></script>
+        <script src="../bower_components/jquery/dist/jquery.js"></script>
+        <script src="../bower_components/highcharts/highcharts.js"></script>
+        <script src="../bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+        <script src="charts.js"></script>
+    </body>
+</html>

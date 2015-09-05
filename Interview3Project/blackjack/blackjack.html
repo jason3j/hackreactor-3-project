@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Blackjack</title>
+        <meta name="viewport" content="width=device-width , initial-scale=1.0 , maximum-scale=1,user-scalable=no">
+        <link href="../bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+        <link href="../myStyles.css" rel="stylesheet">
+    </head>
+    <body background="../pictures/blackjackTable.jpg">
+        <div class="navbar navbar-inverse navbar-static-top">
+            <div class="container">
+                <a href="../mainIndex.html" class="navbar-brand">Main Page</a>
+                <a href="../charts/charts.html" class="navbar-brand">Poké Chart</a>
+                <a href="../Yoda/yoda.html" class="navbar-brand">Yoda Talk</a>
+                <a href="" class="navbar-brand">Blackjack</a>
+                <a href="../about/about.html" class="navbar-brand">About</a>
+            </div>
+        </div>
+
+        <button onclick="blackJackGame()" class="btnBlackjack hover">
+            <a>
+                Click here to play Blackjack
+            </a>
+        </button>
+        <br>
+        <p></p>
+        <br>
+
+        <table id="tableBlackJack" class="userDealerHands">
+            <tr>
+                <td>
+                    <br>
+                    <p id="userHand"></p>
+                </td>
+            </tr>
+            <tr>
+                <td id="userHandCards"></td>
+            </tr>
+            <tr>
+                <td>
+                    <br>
+                    <p id="dealerHand"></p>
+                </td>
+            </tr>
+            <tr>
+                <td id="dealerHandCards"></td>
+            </tr>
+            <tr>
+                <td id="whoWon" class="blackjackTable">
+                    <p></p>
+                </td>
+            </tr>
+            <tr id="toPlayAgain"></tr>
+        </table>
+        <br>
+
+        <p id="hitButton" class="btnHitStay hover">
+            <button onclick="userHandHit()">
+                <a>HIT</a>
+            </button>
+        </p>
+        <p id="stayButton" class="btnHitStay hover">
+            <button onclick="userHandStay()">
+                <a>STAY</a>
+            </button>
+        </p>
+
+
+        <div id="highChartGraph" class="blackJackChart"></div>
+
+        <script type="text/javascript" src="../bower_components/jquery/dist/jquery.js"></script>
+        <script type="text/javascript" src="../bower_components/highcharts/highcharts.js"></script>
+        <script type="text/javascript" src="blackJack.js"></script>
+
+    </body>
+</html>

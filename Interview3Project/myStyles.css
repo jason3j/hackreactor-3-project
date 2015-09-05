@@ -1,0 +1,231 @@
+@media all and (max-width: 200px) { /* screen size until 200px */
+    body {
+        font-size: 7px; /* 0.8x default size */
+    }
+}
+
+body {
+    background-color: black;
+    font-family: fantasy;
+    background-size: cover;
+}
+
+a.highlight:hover {
+    color: #b92c28;
+}
+
+textarea{
+    background-size: auto;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    height: 100px;
+    width: 300px;
+    white-space: normal;
+    border-radius: 5px;
+}
+
+div.jumbo_left {
+    text-align: center;
+    width: 22em;
+}
+div.jumbo_center {
+    padding: 0px 50px 0px 50px;
+}
+div.jumbo_right {
+    text-align: left;
+    width: 22em;
+}
+
+table {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+p {
+    font-size: 17px;
+}
+
+p.outputText{
+    position: relative;
+    top: 150px;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    width: 22em
+}
+p.loadIcon {
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+    top: 165px;
+    width: 3em
+}
+
+table.userDealerHands {
+    margin-left: 50px;
+    margin-right: auto;
+    background-color: greenyellow;
+    border: 5px solid black;
+    padding-left: 10px;
+    width: auto;
+}
+td.userDealerHands {
+    margin-left: 75%;
+}
+
+.btnHitStay {
+    margin-left: 50px;
+    margin-right: auto;
+    display: block;
+    font-size: large;
+    padding: 10px 10px 5px 10px;
+    border-radius: 25px;
+}
+
+td.mainPage {
+    text-align: center;
+}
+
+.imgYoda {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 375px;
+    height: auto;
+}
+
+.imgBubble {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 375px;
+    height: auto;
+}
+
+.jumbotron {
+    background-color: lightgoldenrodyellow;
+    padding: 20px 0 0 0;
+}
+
+.mainPageTable {
+    padding: 50px 50px 50px 50px;
+}
+
+.convertBtn {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: large;
+    color: purple;
+    border: 3px solid #663300;
+    padding: 10px 10px 5px 10px;
+    border-radius: 19px;
+}
+
+.btnBlackjack {
+    margin-left: 50px;
+    margin-right: auto;
+    border-radius: 25px;
+    display: block;
+    font-size: large;
+    padding: 10px 10px 5px 10px;
+    border-radius: 25px;
+    background-color: #b9def0;
+}
+
+.blackJackChart {
+    width:50%;
+    height:600px;
+    position: fixed;
+    bottom: 0px;
+    right: 0px;
+    padding: 50px 50px 50px 50px;
+
+}
+
+.panel {
+    width: 50%;
+    height: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: #00b3ee;
+}
+
+.img-circle {
+    padding: 10px 10px 10px 10px;
+}
+
+.divRandom {
+    background-color: #b2dba1;
+    padding: 10px 10px 10px 10px;
+    text-align: center;
+    margin-left: 75px;
+    margin-right: 75px;
+}
+
+.randomFact {
+    font-size: 20px;
+}
+
+.pokeBody {
+    background-position: center bottom;
+}
+
+.scrollable-menu {
+    height: auto;
+    max-height: 200px;
+    overflow-x: hidden;
+}
+
+text.pokemonSelected:hover {
+    color: red;
+}
+
+.pokemonChosen {
+    background-color: white;
+    width: 50%;
+    padding: 20px 20px 20px 20px;
+    border-radius: 5%;
+    border-color: yellow;
+}
+
+.pokemonChoosing {
+    width: 25%;
+    text-align: center;
+}
+
+.pokemonTables {
+    width: 25%;
+    text-align: center;
+}
+
+.pokemonBtn {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: large;
+    color: white;
+    border: 3px solid white;
+    padding: 10px 10px 5px 10px;
+    border-radius: 19px;
+}
+
+#pokemonChartCombined {
+    width:auto;
+    height:auto;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 100px 250px 100px 250px;
+
+}
+
+.powerByForChart {
+    position: absolute; 
+    bottom: 20px;
+    right: 20px;
+    width: 100px; 
+    text-align:left;
+    font-size: 120%;
+}

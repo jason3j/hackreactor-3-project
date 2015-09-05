@@ -1,0 +1,61 @@
+<html>
+    <head>
+        <title>Yoda Talk</title>
+        <meta name="viewport" content="width=device-width , initial-scale=1.0 , maximum-scale=1,user-scalable=no">
+        <link href="../bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+        <link href="../myStyles.css" rel="stylesheet">
+    </head>
+    <body background="../Pictures/Dark_Side_Cave.png">
+        <div class="navbar navbar-inverse navbar-static-top">
+            <div class="container">
+                <a href="../mainIndex.html" class="navbar-brand">Main Page</a>
+                <a href="../charts/charts.html" class="navbar-brand">Poke Chart</a>
+                <a href="" class="navbar-brand">Yoda Talk</a>
+                <a href="../blackjack/blackjack.html" class="navbar-brand">Blackjack</a>
+                <a href="../about/about.html" class="navbar-brand">About</a>
+            </div>
+        </div>
+        <div class="jumbotron text-responsive">
+            <table>
+                <td>
+                    <div class="jumbo_left"><p>Welcome to YodaTalk! (Powered by <a href="https://www.mashape.com/ismaelc/yoda-speak">ismaelc's API</a>) Here you can put text into
+                        the text box to the right and it will tell you how Yoda would say it
+                        in the quote bubble below.</p></div>
+                </td>
+
+                <td>
+                    <div class="jumbo_center">
+                        <textarea type="text"  id="userTextEntered"></textarea>
+                        <br>
+                        <button id="convertBtn" value="userTextEntered" class="convertBtn">Convert</button>
+                        <br>
+                    </div>
+                </td>
+
+                <td>
+                    <div class="jumbo_right" >
+                        <p style="font-size: 17px;">Here are some examples of sentences you can try:</p>
+                        <p style="font-size: 17px;">JavaScript is the best!</p>
+                        <p style="font-size: 17px;">You must have patience my young padawan.</p>
+                    </div>
+                </td>
+            </table>
+        </div>
+
+        <div class="center-block">
+            <p id="loadingIcon" class="loadIcon"></p>
+            <p id="bubbleText" value="" class="outputText"></p>
+
+            <img src="../pictures/commentBubbleStraight.jpg" class="imgBubble img-responsive">
+
+            <img src="../pictures/yodaCool.jpg" class="img-circle imgYoda img-responsive">
+        </div>
+
+        <script src="../bower_components/spin.js/spin.min.js"></script>
+        <script src="../bower_components/jquery/dist/jquery.js"></script>
+        <script src="yoda.js"></script>
+
+    </body>
+</html>
+
+
