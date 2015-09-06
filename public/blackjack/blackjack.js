@@ -79,7 +79,7 @@ function resetTable () {
 function matchObjectToCardUser (cardString) {
     //this matches string to the card
     var img = document.createElement("img");
-    img.src = "../pictures/faceCards/" + cardString + ".png";
+    img.src = "../Pictures/faceCards/" + cardString + ".png";
     img.width = 100;
     img.height = 100;
     img.alt = "card";
@@ -94,7 +94,7 @@ function matchObjectToCardUser (cardString) {
 function matchObjectToCardDealer (cardString) {
     //this matches string to the card
     var img = document.createElement("img");
-    img.src = "../pictures/faceCards/" + cardString + ".png";
+    img.src = "../Pictures/faceCards/" + cardString + ".png";
     img.width = 100;
     img.height = 100;
     img.alt = "card";
