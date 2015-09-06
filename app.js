@@ -7,7 +7,7 @@ var app = express();
 app.set('port', (process.env.PORT || 5000));
 
 console.log("hey");
-app.use(express.static('public'));
+app.use(express.static(__dirname + '/public'));
 
 //app.get('/', function (req, res) {
 //    res.send('Hello World!');
