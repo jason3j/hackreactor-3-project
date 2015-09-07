@@ -235,3 +235,8 @@ text.pokemonSelected:hover {
     padding: 20px 0px 20px 0px;
     text-align: center;
 }
+
+.about {
+    padding-left: 100px;
+    padding-right: 100px;
+}
