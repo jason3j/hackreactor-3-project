@@ -7,7 +7,7 @@
 body {
     background-color: black;
     font-family: fantasy;
-    background-size: cover;
+    background-repeat: no-repeat;
 }
 
 a.highlight:hover {
@@ -27,14 +27,14 @@ textarea{
 
 div.jumbo_left {
     text-align: center;
-    width: 22em;
+    width: 15em;
 }
 div.jumbo_center {
     padding: 0px 50px 0px 50px;
 }
 div.jumbo_right {
     text-align: left;
-    width: 22em;
+    width: 15em;
 }
 
 table {
@@ -228,4 +228,10 @@ text.pokemonSelected:hover {
     width: 100px; 
     text-align:left;
     font-size: 120%;
+}
+
+.inWhiteBox {
+    border-spacing: 100px;
+    padding: 20px 0px 20px 0px;
+    text-align: center;
 }
