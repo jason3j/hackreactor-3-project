@@ -5,8 +5,8 @@
 }
 
 body {
-    background-color: black;
     font-family: fantasy;
+    background-color: black;
     background-repeat: no-repeat;
 }
 
@@ -47,12 +47,13 @@ p {
 }
 
 p.outputText{
-    position: relative;
-    top: 150px;
+    position: absolute;
+    width: 22em;
+    padding: 30px;
+    top: 30%;
+    left: 50%;
+    margin-left: -190px;
     text-align: center;
-    margin-left: auto;
-    margin-right: auto;
-    width: 22em
 }
 p.loadIcon {
     text-align: center;
@@ -94,6 +95,9 @@ td.mainPage {
     margin-right: auto;
     width: 375px;
     height: auto;
+    /*position: relative;*/
+    /*top: 75%;*/
+    /*left: 41%;*/
 }
 
 .imgBubble {
@@ -102,6 +106,9 @@ td.mainPage {
     margin-right: auto;
     width: 375px;
     height: auto;
+    position: static;
+    /*top: 30%;*/
+    /*left: 41%;*/
 }
 
 .jumbotron {
@@ -139,8 +146,8 @@ td.mainPage {
     width:50%;
     height:600px;
     position: fixed;
-    bottom: 0px;
-    right: 0px;
+    bottom: 0;
+    right: 0;
     padding: 50px 50px 50px 50px;
 
 }

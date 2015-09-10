@@ -3,8 +3,8 @@
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 // declared variables
-var possibleCardSymbols = ["2", "3", "4", "5", "6", "7", "8", "9", "10", "jack", "queen", "king", "ace"];
-//var possibleCardSymbols = ["2","3","4","ace","ace","ace","ace","ace","10","jack", "queen", "king", "ace"];
+//var possibleCardSymbols = ["2", "3", "4", "5", "6", "7", "8", "9", "10", "jack", "queen", "king", "ace"];
+var possibleCardSymbols = ["2","3","4","ace","ace","ace","ace","ace","10","jack", "queen", "king", "ace"];
 var possibleCardSuit = ["spades", "hearts", "clubs", "diamonds"];
 var timesUserHit = 0;
 var deck = [];
@@ -114,10 +114,16 @@ function userHandHit() {
     userHandArray.push(poppedCard);
     matchObjectToCardUser(poppedCard.symbol + "_of_" + poppedCard.suit);
 
+    userHand();
+    if (userHand() < 21) {
+
+    }
+
     if(timesUserHit === 11) {
         document.getElementById("hitButton").innerHTML = " ";
         timesUserHit = 0;
     }
+
     return userHandArray;
 }// end userHandHit Function
 
@@ -134,7 +140,7 @@ function userHandStay () {
     console.log("Dealer Total: " + dealerHand());
     console.log("User Total: " + userHand());
     //This reveals the dealers second card
-    matchObjectToCardDealer(dealerHandArray[1].symbol + "_of_" + dealerHandArray[1].suit)
+    matchObjectToCardDealer(dealerHandArray[1].symbol + "_of_" + dealerHandArray[1].suit);
 
     //call the finalResults function to see who won
     finalResults(userHand(), dealerHand());
@@ -184,6 +190,7 @@ function finalResults (userTot, dealerTot) {
 //input - none
 //output - returns total of user hand for final calculation
 function userHand () {
+    //userHandArray = acesLast(userHandArray);
     //this count is two and then passed into dealerHand and userHand
     //so then the correct cards can be show after the ones that have already been drawn
     var count = 2;
@@ -195,6 +202,7 @@ function userHand () {
         //matchObjectToCardDealer(userHandArray[count].symbol + "_of_" + userHandArray[count].suit)
         count++;
     } while (count < userHandArray.length);
+
     return userTotal;
 }
 
@@ -284,6 +292,25 @@ function shuffle(array) {
     }
 }
 
+function acesLast (array) {
+    //array.forEach(function (array) {
+    //    if (array[i].symbol === "ace") {
+    //
+    //    }
+    //});
+    var whatIsSpliced;
+    for (var i = 0; i < array.length; i++) {
+        if (array[i].symbol === "ace") {
+            whatIsSpliced = array.splice(i,1);
+            console.log("What is spliced: " + whatIsSpliced);
+            array.push(whatIsSpliced);
+            i--;
+        }
+    }
+    console.log(array);
+    return array;
+}
+
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 //////////////////////////////////////////////      CHART       ////////////////////////////////////////////////////////
@@ -298,17 +325,13 @@ function chart () {
         $('#highChartGraph').highcharts({
             chart: {
                 type: 'column',
-                backgroundColor: "#D2F8FF",
-
+                backgroundColor: "#D2F8FF"
             },
             title: {
                 text: 'Player VS Dealer'
             },
             xAxis: {
-
-                title: {
-                    text: "Player/Dealer Wins"
-                }
+                categories: [""]
             },
             yAxis: {
                 title: {
@@ -328,3 +351,30 @@ function chart () {
         });
     });
 }
+
+
+
+
+
+//function symbolAssigner(array) {
+//    var numberTotal = 0;
+//    var aceUsed = 0;
+//    array.forEach(function (array) {
+//        if (array.symbol === "king" ||
+//            array.symbol === "queen" ||
+//            array.symbol === "jack") {
+//
+//            numberTotal += 10;
+//        } else if (array.symbol === "ace") {
+//            numberTotal += 1;
+//            aceUsed++;
+//        } else {
+//            numberTotal += parseInt(array.symbol);
+//        }
+//
+//        if (numberTotal <= 11 && aceUsed < 2) {
+//            numberTotal += 10;
+//        }
+//    });
+//    return numberTotal;
+//}// end symbolAssignerUser function
