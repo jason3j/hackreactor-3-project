@@ -10,6 +10,7 @@
         <title>Blackjack</title>
     </head>
     <body background="../Pictures/blackjackTable.jpg">
+
         <div class="navbar navbar-inverse navbar-static-top">
             <div class="container">
                 <a href="../index.html" class="navbar-brand">Main Page</a>
@@ -20,7 +21,7 @@
             </div>
         </div>
 
-        <button onclick="blackJackGame()" class="btnBlackjack hover">
+        <button onclick="blackJackGame()" class="btnBlackjack hover" id="btnPlayBlackjack">
             <a>Click here to play Blackjack</a>
         </button>
         <br>
@@ -50,21 +51,27 @@
                 <td id="whoWon" class="blackjackTable">
                     <p></p>
                 </td>
+
             </tr>
             <tr id="toPlayAgain"></tr>
         </table>
         <br>
+        <td>
+            <p id="hitButton" class="btnHitStay hover">
+                <button onclick="userHandHit()">
+                    <a>HIT</a>
+                </button>
+            </p>
+        </td>
+        <td>
+            <p id="stayButton" class="btnHitStay hover">
+                <button onclick="userHandStay()">
+                    <a>STAY</a>
+                </button>
+            </p>
+        </td>
 
-        <p id="hitButton" class="btnHitStay hover">
-            <button onclick="userHandHit()">
-                <a>HIT</a>
-            </button>
-        </p>
-        <p id="stayButton" class="btnHitStay hover">
-            <button onclick="userHandStay()">
-                <a>STAY</a>
-            </button>
-        </p>
+
 
 
         <div id="highChartGraph" class="blackJackChart"></div>

@@ -26,6 +26,9 @@ document.getElementById("tableBlackJack").style.display = "none";
 //blackJackGame function that correlates to the html button to start a game
 // no inputs or outputs
 function blackJackGame () {
+    //jquery
+    //This disables the play again button
+    $("#btnPlayBlackjack").prop("disabled", true);
     document.getElementById("userHand").innerHTML = "<p style='padding: 10px; display: inline'>Your Hand</p>";
     document.getElementById("dealerHand").innerHTML = "<p style='padding: 10px; display: inline'>Dealer's Hand</p>";
     document.getElementById("tableBlackJack").style.display = "table";
@@ -40,12 +43,10 @@ function blackJackGame () {
     dealerHandArray.push(deck.pop());
 
     // show user what cards that start with
-    document.getElementById("userHandCards").innerHTML = "<p style='padding: 5px; display: inline'> </p>";
     matchObjectToCardUser(userHandArray[0].symbol + "_of_" + userHandArray[0].suit);
     matchObjectToCardUser(userHandArray[1].symbol + "_of_" + userHandArray[1].suit);
 
     // show user one card the dealer starts with
-    document.getElementById("dealerHandCards").innerHTML = "<p style='padding: 5px; display: inline'> </p>";
     matchObjectToCardDealer(dealerHandArray[0].symbol + "_of_" + dealerHandArray[0].suit);
 
     // check to see if the user got 21 after receiving the first two cards
@@ -103,6 +104,7 @@ function matchObjectToCardUser (cardString) {
 
     //this shows the card to html page
     document.getElementById("userHandCards").appendChild(img);
+    document.getElementById("userHandCards").style.padding = 10 + "px";
 }//End matchObjectToCardUser Function
 
 //matchObjectToCardDealer Function
@@ -118,6 +120,8 @@ function matchObjectToCardDealer (cardString) {
 
     //this shows the card to html page
     document.getElementById("dealerHandCards").appendChild(img);
+    document.getElementById("dealerHandCards").style.padding = 10 + "px";
+
 }//End matchObjectToCardDealer Function
 
 //userHandHit Function
@@ -136,6 +140,9 @@ function userHandHit() {
     if (uHand > 21) {
         finalResultsUserLoss(uHand);
     } else if (uHand === 21) {
+        //This hides the hit and stay buttons
+        document.getElementById("hitButton").innerHTML = " ";
+        document.getElementById("stayButton").innerHTML = " ";
         finalResults(uHand, dealerHand());
     }
 }// End userHandHit Function
@@ -178,6 +185,9 @@ function finalResultsUserLoss(userTot) {
     //display message on how to play again
     document.getElementById("toPlayAgain").innerHTML = "<br><p style='padding: 10px; display: inline'>To play again, click the button above</p>";
 
+    //jquery
+    //This enables the play again button
+    $("#btnPlayBlackjack").prop("disabled", false);
     //this shows and updates the chart and that the dealer won the game
     dealerNumWins++;
     chart();
@@ -218,6 +228,9 @@ function finalResults (userTot, dealerTot) {
     //display message on how to play again
     document.getElementById("toPlayAgain").innerHTML = "<p style='padding: 10px; display: inline'>To play again, click the button above</p>";
 
+    //jquery
+    //This enables the play again button
+    $("#btnPlayBlackjack").prop("disabled", false);
     //this shows and updates the chart
     chart();
 }//End finalResults Function

@@ -4,20 +4,17 @@
     }
 }
 
-/*html {*/
-    /*-webkit-background-size: cover;*/
-    /*-moz-background-size: cover;*/
-    /*-o-background-size: cover;*/
-    /*background-size: cover;*/
-/*}*/
+html{
+    height:100%;
+    min-height:100%;
+}
 
 body {
     font-family: fantasy;
     background-color: black;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
     background-size: cover;
+    background-repeat: no-repeat;
+    min-height:100%;
 }
 
 a.highlight:hover {
@@ -76,15 +73,14 @@ p.loadIcon {
 
 table.userDealerHands {
     margin-left: 50px;
-    margin-right: 50px;
+    /*margin-right: 50px;*/
     background-color: greenyellow;
-    /*border: 5px solid black;*/
-    padding: 10px;
+    /*padding: 10px;*/
     width: auto;
     /*height: 400px;*/
 }
 td.userDealerHands {
-    margin-left: 75%;
+    /*margin-left: 75%;*/
 }
 
 .btnHitStay {
@@ -93,7 +89,7 @@ td.userDealerHands {
     display: block;
     font-size: large;
     padding: 10px 10px 5px 10px;
-    border-radius: 25px;
+    /*radius: 25px;*/
 }
 
 td.mainPage {
@@ -251,4 +247,8 @@ text.pokemonSelected:hover {
 .about {
     padding-left: 100px;
     padding-right: 100px;
+}
+
+.userHandCards {
+    padding: 10px;
 }
