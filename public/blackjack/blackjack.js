@@ -15,20 +15,25 @@ var numTies = 0;
 var dHand = 0;
 var uHand = 0;
 
-//
+//jquery
 //This hides the hit and stay buttons and the table for the beginning
 //until the user clicks the play blackjack button
-document.getElementById("hitButton").innerHTML = " ";
-document.getElementById("stayButton").innerHTML = " ";
+$("#hitButton").hide();
+$("#stayButton").hide();
 document.getElementById("tableBlackJack").style.display = "none";
 //--------------------------------------------FUNCTIONS---------------------------------------------------//
 
 //blackJackGame function that correlates to the html button to start a game
 // no inputs or outputs
-function blackJackGame () {
+function blackJackGame ()
+{
+
     //jquery
-    //This disables the play again button
-    $("#btnPlayBlackjack").prop("disabled", true);
+    //This hides the play again button
+    $("#btnPlayBlackjack").hide();
+    $("#hitButton").show();
+    $("#stayButton").show();
+
     document.getElementById("userHand").innerHTML = "<p style='padding: 10px; display: inline'>Your Hand</p>";
     document.getElementById("dealerHand").innerHTML = "<p style='padding: 10px; display: inline'>Dealer's Hand</p>";
     document.getElementById("tableBlackJack").style.display = "table";
@@ -58,9 +63,11 @@ function blackJackGame () {
             matchObjectToCardDealer(dealerHandArray[1].symbol + "_of_" + dealerHandArray[1].suit);
         }
         finalResults(uHand, dHand);
+
+        //jquery
         //This hides the hit and stay buttons
-        document.getElementById("hitButton").innerHTML = " ";
-        document.getElementById("stayButton").innerHTML = " ";
+        $("#hitButton").hide();
+        $("#stayButton").hide();
     }
 }// End blackJackGame function
 
@@ -140,9 +147,10 @@ function userHandHit() {
     if (uHand > 21) {
         finalResultsUserLoss(uHand);
     } else if (uHand === 21) {
+        //jquery
         //This hides the hit and stay buttons
-        document.getElementById("hitButton").innerHTML = " ";
-        document.getElementById("stayButton").innerHTML = " ";
+        $("#hitButton").hide();
+        $("#stayButton").hide();
         finalResults(uHand, dealerHand());
     }
 }// End userHandHit Function
@@ -153,9 +161,10 @@ function userHandHit() {
 //This function is called when the user clicks the "STAY" button in the html
 //used for matching suit and number to their picture as they are drawn
 function userHandStay () {
+    //jquery
     //This hides the hit and stay buttons
-    document.getElementById("hitButton").innerHTML = " ";
-    document.getElementById("stayButton").innerHTML = " ";
+    $("#hitButton").hide();
+    $("#stayButton").hide();
     dHand = dealerHand();
     uHand = symbolAssigner(userHandArray);
 
@@ -179,15 +188,20 @@ function finalResultsUserLoss(userTot) {
     }
 
     //Hide Hit and Stay button
-    document.getElementById("hitButton").innerHTML = " ";
-    document.getElementById("stayButton").innerHTML = " ";
+    $("#hitButton").hide();
+    $("#stayButton").hide();
+    //document.getElementById("hitButton").innerHTML = " ";
+    //document.getElementById("stayButton").innerHTML = " ";
 
     //display message on how to play again
-    document.getElementById("toPlayAgain").innerHTML = "<br><p style='padding: 10px; display: inline'>To play again, click the button above</p>";
+    document.getElementById("toPlayAgain").innerHTML = "<br><p style='padding: 10px; display: inline'>To play again, click the button below</p>";
+
+    //document.getElementById("btnPlayBlackjack").innerHTML = "<a>Click here to play Blackjack</a>";
 
     //jquery
-    //This enables the play again button
-    $("#btnPlayBlackjack").prop("disabled", false);
+    //This shows the play again button
+    $("#btnPlayBlackjack").show();
+
     //this shows and updates the chart and that the dealer won the game
     dealerNumWins++;
     chart();
@@ -226,11 +240,14 @@ function finalResults (userTot, dealerTot) {
     }
 
     //display message on how to play again
-    document.getElementById("toPlayAgain").innerHTML = "<p style='padding: 10px; display: inline'>To play again, click the button above</p>";
+    document.getElementById("toPlayAgain").innerHTML = "<p style='padding: 10px; display: inline'>To play again, click the button below</p>";
+
+    //document.getElementById("btnPlayBlackjack").innerHTML = "<a>Click here to play Blackjack</a>";
 
     //jquery
-    //This enables the play again button
-    $("#btnPlayBlackjack").prop("disabled", false);
+    //This shows the play again button
+    $("#btnPlayBlackjack").show();
+
     //this shows and updates the chart
     chart();
 }//End finalResults Function
