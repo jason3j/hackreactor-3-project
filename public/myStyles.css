@@ -4,10 +4,20 @@
     }
 }
 
+/*html {*/
+    /*-webkit-background-size: cover;*/
+    /*-moz-background-size: cover;*/
+    /*-o-background-size: cover;*/
+    /*background-size: cover;*/
+/*}*/
+
 body {
     font-family: fantasy;
     background-color: black;
-    background-repeat: no-repeat;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
 }
 
 a.highlight:hover {
@@ -30,7 +40,7 @@ div.jumbo_left {
     width: 15em;
 }
 div.jumbo_center {
-    padding: 0px 50px 0px 50px;
+    padding: 0 50px 0 50px;
 }
 div.jumbo_right {
     text-align: left;
@@ -66,11 +76,12 @@ p.loadIcon {
 
 table.userDealerHands {
     margin-left: 50px;
-    margin-right: auto;
+    margin-right: 50px;
     background-color: greenyellow;
-    border: 5px solid black;
-    padding-left: 10px;
+    /*border: 5px solid black;*/
+    padding: 10px;
     width: auto;
+    /*height: 400px;*/
 }
 td.userDealerHands {
     margin-left: 75%;
@@ -95,9 +106,6 @@ td.mainPage {
     margin-right: auto;
     width: 375px;
     height: auto;
-    /*position: relative;*/
-    /*top: 75%;*/
-    /*left: 41%;*/
 }
 
 .imgBubble {
@@ -107,8 +115,6 @@ td.mainPage {
     width: 375px;
     height: auto;
     position: static;
-    /*top: 30%;*/
-    /*left: 41%;*/
 }
 
 .jumbotron {
@@ -138,7 +144,6 @@ td.mainPage {
     display: block;
     font-size: large;
     padding: 10px 10px 5px 10px;
-    border-radius: 25px;
     background-color: #b9def0;
 }
 
@@ -239,7 +244,7 @@ text.pokemonSelected:hover {
 
 .inWhiteBox {
     border-spacing: 100px;
-    padding: 20px 0px 20px 0px;
+    padding: 20px 0 20px 0;
     text-align: center;
 }
 
